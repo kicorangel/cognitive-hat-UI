@@ -1,59 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Cognitive Board UI
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Frontend for the **Cognitive Board**: a multi-agent decision interface designed to make executive reasoning visible, traceable, and actionable.
 
-## About Laravel
+This UI is not a generic chat frontend. It is the presentation layer of a structured reasoning system in which **organisational roles** operate under **Six Thinking Hats** as controlled reasoning protocols, with transparent orchestration and governed synthesis. :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2}
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## What this UI does
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The UI allows users to:
 
-## Learning Laravel
+- Submit a **strategic brief** as free text
+- Optionally attach supporting context such as documents, spreadsheets, or constraints
+- Trigger the execution of the reasoning engine through a REST API
+- Visualise the progression of the reasoning flow across hats and agents
+- Inspect intermediate outputs instead of receiving only a final answer
+- Review the final structured synthesis together with its reasoning trace
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+The design principle is simple:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+> **You don’t just get an answer. You see thinking.** :contentReference[oaicite:3]{index=3}
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Why this interface exists
 
-### Premium Partners
+Traditional AI tools are optimised for speed, but high-stakes executive decisions require something else: **disciplined multi-perspective reasoning**. The UI exists to make that process visible and usable for boards, executive committees, and strategic discussions. :contentReference[oaicite:4]{index=4}
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+This interface was built to support:
 
-## Contributing
+- executive-grade transparency
+- structured disagreement
+- auditable reasoning
+- governance-ready outputs
+- better usability and adoption than a backend-only prototype :contentReference[oaicite:5]{index=5} :contentReference[oaicite:6]{index=6}
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Product principles
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Transparency is the product
+The UI exposes the system’s intermediate reasoning rather than hiding it behind a single opaque output. This improves trust, explainability, and governance readiness. :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
 
-## Security Vulnerabilities
+### 2. Roles are the agents
+The system does not model hats as agents. Instead, the agents are organisational roles such as CEO, CFO, CTO, CPO, CDO, and CSO. The UI reflects that distinction clearly. :contentReference[oaicite:9]{index=9} :contentReference[oaicite:10]{index=10}
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 3. Hats are reasoning protocols
+The interface makes visible how the same role changes reasoning mode across iterations: facts, intuition, risks, upside, alternatives, and synthesis. :contentReference[oaicite:11]{index=11}
 
-## License
+### 4. Governed output matters more than raw generation
+The goal is not to produce “more AI text”, but a **structured decision** backed by a visible reasoning trail. :contentReference[oaicite:12]{index=12}
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## Core user experience
+
+A typical flow looks like this:
+
+1. The user enters a **strategic decision brief**
+2. The backend normalises the decision space
+3. The engine runs sequential reasoning across roles and hats
+4. The UI shows live execution feedback
+5. Intermediate outputs are displayed by hat / role
+6. A final synthesis is presented with rationale, risks, and mitigation
+
+The current concept shown in the presentation includes:
+
+- real-time agent activity visualisation
+- reasoning by hat, kept structured and separated
+- streaming outputs
+- traceable decision path
+- governed synthesis output :contentReference[oaicite:13]{index=13}
+
+---
+
+## Tech stack
+
+According to the current architecture, the UI layer is built with:
+
+- **Laravel**
+- **Blade**
+- **Controllers**
+- **REST API integration** with the Python reasoning engine
+
+Its purpose is to provide an end-to-end interface from executive input to governed decision output, while keeping a clean separation between orchestration and presentation. :contentReference[oaicite:14]{index=14}
+
+---
+
+## High-level architecture
+
+```text
+[User Input]
+    ↓
+[Laravel UI]
+    ↓  REST API
+[Python / LangGraph Engine]
+    ↓
+[Role × Hat reasoning outputs]
+    ↓
+[Blue Hat synthesis]
+    ↓
+[UI rendering: decision + reasoning trace]
+
+## Quick start
+
+git clone <your-repository-url>
+cd <repository-folder>
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
+npm run dev
+
+Navigate to: http://localhost:8001/cognitive-hat
